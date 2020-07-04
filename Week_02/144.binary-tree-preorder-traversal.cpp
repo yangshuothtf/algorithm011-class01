@@ -9,23 +9,22 @@
  */
 class Solution {
 public:
-    vector<int> postorderTraversal(TreeNode* root) {
-        vector<int> result;
+    vector<int> preorderTraversal(TreeNode* root) {
         stack<TreeNode*> myStack;
+        vector<int> result;
         if(root==NULL) return result;
-        TreeNode *p=root;
+        TreeNode *p = root;
         while(p!=NULL || myStack.size()!=0){
             while(p!=NULL){
+                result.push_back(p->val);
                 myStack.push(p);
                 p=p->left;
             }
             p=myStack.top();
             myStack.pop();
             p=p->right;
-            if(p!=NULL){
-                result.push_back(p->val);
-            }
         }
         return result;
     }
+
 };
