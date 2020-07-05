@@ -1,9 +1,16 @@
 学习笔记
+图和树的区别，图一定要有set<int> visited, 因为图是有环路的，而树没有环路，所以树可以不写。
+    
 二叉树的遍历，深度优先DFS,广度优先BFS.
+
 BFS用queue可以做遍历，不好用递归。
+
 DFS用stack做遍历，也可以用递归，DFS有前序，中序，后序之分。
+
 其中，后序遍历首先用前序遍历，然后反转。
+
 前序遍历的非递归方法有两种遍历形式，
+
 法一，和中序遍历类似：
     vector<int> preorderTraversal(TreeNode* root) {
         stack<TreeNode*> myStack;
